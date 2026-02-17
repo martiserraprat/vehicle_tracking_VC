@@ -1,8 +1,8 @@
-import skimage as ski
+import FuncionsPP
 import numpy as np
 
 def main():
-    print("¡Hola desde la función main!")
-
+    mat = FuncionsPP.generarMatrius()
+    print(mat[0])
 if __name__ == "__main__":
     main()
