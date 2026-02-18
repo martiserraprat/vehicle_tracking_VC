@@ -15,3 +15,6 @@ def generarMatrius():
             matfotos[i] = (img * 255).astype(np.uint8)
             
     return matfotos
+
+def Calculmitjana():
+        pass
