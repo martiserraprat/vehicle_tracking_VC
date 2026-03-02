@@ -14,7 +14,6 @@ def main():
     train_mat = mat[0:150]
     test_mat = mat[150:300]
     mitjana, desviacio = FuncionsPP.calcularModelFons(train_mat)
-    utils.print_img(res_4)
 
     opcio = 4 ## 3 o 4, quina Tasca/Mètode volem utilitzar per defecte 4
 
