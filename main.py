@@ -7,8 +7,8 @@ def main():
     llindar = 62 # Simplament a partir de quan es considera cotxe despres de fer la resta
 
     ## tasca 4
-    alpha = 1.1 # Si alpha és petit el detector és molt sensible i si es mes gran es mes exigent
-    beta = 17 # tarctar el soroll de la càmera quan mes gran mes soroll elimina pero es pot emportar cotxes per davant
+    alpha = 1.5 # Si alpha és petit el detector és molt sensible i si es mes gran es mes exigent
+    beta = 30 # tarctar el soroll de la càmera quan mes gran mes soroll elimina pero es pot emportar cotxes per davant
     
     mat = FuncionsPP.generarMatrius()
     train_mat = mat[0:150]
