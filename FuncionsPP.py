@@ -16,5 +16,7 @@ def generarMatrius():
             
     return matfotos
 
-def Calculmitjana():
-        pass
+def calcularModelFons(train_mat):
+    mitjana = np.mean(train_mat, axis=0)
+    desviacio = np.std(train_mat, axis=0)
+    return mitjana, desviacio
