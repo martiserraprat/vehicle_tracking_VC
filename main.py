@@ -1,7 +1,6 @@
 import FuncionsPP
 import numpy as np
 import utils
-import matplotlib.pyplot as plt
 
 def main():
     ## tasca 3
@@ -16,7 +15,7 @@ def main():
     test_mat = mat[150:300]
     mitjana, desviacio = FuncionsPP.calcularModelFons(train_mat)
 
-    opcio = 4 ## 3 o 4, quina Tasca/Mètode volem utilitzar per defecte 4
+    opcio = 3 ## 3 o 4, quina Tasca/Mètode volem utilitzar per defecte 4
 
     res = FuncionsPP.generar_tots_resultats(opcio, test_mat, llindar, alpha, beta, mitjana, desviacio) # (opcio, test_mat, llindar, alpha, beta, mitjana, desviacio)
 
