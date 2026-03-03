@@ -1,18 +1,17 @@
 classdef FuncionsPP
     methods (Static)
-        
         function matfotos = generarMatrius()
             archivos = dir('img/*.jpg');
             num_fotos = length(archivos);
             
-            % Leer la primera para saber el tamaño
+            % llegir primera img per saber el tamany
             primera_img = imread(fullfile(archivos(1).folder, archivos(1).name));
             if size(primera_img, 3) == 3
                 primera_img = rgb2gray(primera_img);
             end
             [alto, ancho] = size(primera_img);
             
-            % Pre-asignar matriz (H x W x Num)
+            % crear matriu (H x W x Num)
             matfotos = zeros(alto, ancho, num_fotos, 'uint8');
             
             for i = 1:num_fotos
