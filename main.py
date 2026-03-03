@@ -1,6 +1,7 @@
 import FuncionsPP
 import numpy as np
 import utils
+import matplotlib.pyplot as plt
 
 def main():
     ## tasca 3
