@@ -2,7 +2,6 @@ classdef FuncionsPP
     methods (Static)
         
         function matfotos = generarMatrius()
-            % Obtener lista de archivos
             archivos = dir('img/*.jpg');
             num_fotos = length(archivos);
             
@@ -13,7 +12,7 @@ classdef FuncionsPP
             end
             [alto, ancho] = size(primera_img);
             
-            % Pre-asignar matriz 3D (H x W x Num)
+            % Pre-asignar matriz (H x W x Num)
             matfotos = zeros(alto, ancho, num_fotos, 'uint8');
             
             for i = 1:num_fotos
@@ -26,9 +25,7 @@ classdef FuncionsPP
         end
 
         function [mitjana, desviacio] = calcularModelFons(train_mat)
-            % Convertimos a double para cálculos precisos
             train_double = double(train_mat);
-            % Calculamos media y std a lo largo de la 3ª dimensión (tiempo)
             mitjana = mean(train_double, 3);
             desviacio = std(train_double, 0, 3);
         end
@@ -36,7 +33,6 @@ classdef FuncionsPP
         function mascara = tasca_3(llindar, mitjana, img)
             resta = abs(double(img) - mitjana);
             mascara = resta > llindar; 
-            % En MATLAB las matrices lógicas funcionan como 0 y 1
             mascara = uint8(mascara * 255); 
         end
 
@@ -61,10 +57,8 @@ classdef FuncionsPP
 
         function gt_mat = carregar_groundtruth_test()
             archivos = dir('groundtruth/*.png');
-            % Filtrar por número (1201 a 1350) como en tu Python
             count = 1;
             for i = 1:length(archivos)
-                % Extraer número del nombre (ej: gt1201.png -> 1201)
                 num = str2double(regexp(archivos(i).name, '\d+', 'match'));
                 if num >= 1201 && num <= 1350
                     gt_files{count} = fullfile(archivos(i).folder, archivos(i).name);
@@ -91,7 +85,6 @@ classdef FuncionsPP
                 pred_bin = pred_seq(:,:,i) == 255;
                 gt_bin = gt_seq(:,:,i) == 255;
                 
-                % Accuracy = (pixeles iguales) / (total pixeles)
                 acc_per_img(i) = sum(pred_bin(:) == gt_bin(:)) / numel(pred_bin);
             end
             accuracy_mitjana = mean(acc_per_img);
