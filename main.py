@@ -27,7 +27,7 @@ def main():
     print("Accuracy mitjana: ", accuracy_mitjana)
     utils.print_plot_ACC(acc_per_img)
     
-    #es pot veure que com mes cotxes mes baixa la accuracy, es a dir l accuracy es algo "falsa"
+    # es pot veure que com mes cotxes mes baixa la accuracy, es a dir l accuracy es algo "falsa"
 
 if __name__ == "__main__":
     main()
