@@ -17,3 +17,10 @@ def gravar_video(results_seq):
         frame_color = cv2.cvtColor(results_seq[i].astype(np.uint8), cv2.COLOR_GRAY2BGR)
         out.write(frame_color)
     out.release()
+
+def print_plot_ACC(acc):
+    plt.plot(acc)
+    plt.title("Accuracy per frame")
+    plt.xlabel("Frame")
+    plt.ylabel("Accuracy")
+    plt.show()

@@ -24,12 +24,10 @@ def main():
 
     gt_test = FuncionsPP.carregar_groundtruth_test()
     accuracy_mitjana, acc_per_img = FuncionsPP.calcular_accuracy(res, gt_test)
+
     print("Accuracy mitjana: ", accuracy_mitjana)
-    plt.plot(acc_per_img)
-    plt.title("Accuracy per frame")
-    plt.xlabel("Frame")
-    plt.ylabel("Accuracy")
-    plt.show()
+    utils.print_plot_ACC(acc_per_img)
+    
     #es pot veure que com mes cotxes mes baixa la accuracy, es a dir l accuracy es algo "falsa"
 
 if __name__ == "__main__":

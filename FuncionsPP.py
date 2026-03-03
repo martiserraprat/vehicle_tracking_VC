@@ -48,7 +48,6 @@ def generar_tots_resultats(opcio, test_mat, llindar, alpha, beta, mitjana, desvi
 def carregar_groundtruth_test():
     
     gt_files = (glob.glob("groundtruth/*.png"))
-    
     gt_test_files = []
     
     for f in gt_files:
@@ -58,13 +57,13 @@ def carregar_groundtruth_test():
     
     gt_test_files = sorted(gt_test_files)
     
-    primera = io.imread(gt_test_files[0], as_gray=True)
+    primera = ski.io.imread(gt_test_files[0], as_gray=True)
     h, w = primera.shape
     
     gt_mat = np.zeros((len(gt_test_files), h, w), dtype=np.uint8)
     
     for i in range(len(gt_test_files)):
-        gt_mat[i] = io.imread(gt_test_files[i], as_gray=True)
+        gt_mat[i] = ski.io.imread(gt_test_files[i], as_gray=True)
         
     return gt_mat
 
